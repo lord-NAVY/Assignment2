@@ -1,68 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <!--Css-->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="/@fortawesome/fontawesome-free/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/Content/app.css" />
-  </head>
-  <body>
-    <!--Main navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+<%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/home"><i class="fas fa-lg fa-home"></i> Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/about"> <i class="fas fa-lg fa-address-card"></i> About</a>
+<!--Main content-->
 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/products"> <i class="fas fa-lg fa-archive"></i> Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/services"> <i class="fab fa-lg fa-servicestack"></i> Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/contact"> <i class="fas fa-lg fa-address-book"></i> Contact</a>
-            </li>
-            
+<main>
+  <div class="container"><%- include('Contents/' + page + '.ejs');%></div>
+</main>
 
-            
+<main class="container"></main>
 
-            
-
-            
-      </div>
-    </nav>
-
-    <h1>Welcome to the <%= title %> page</h1>
-
-    <!--Custom script here-->
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/Scripts/app.js"></script>
-  </body>
-</html>
+<%- include partials/bottom_nav.ejs %> <%- include partials/footer.ejs %>
