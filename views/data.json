@@ -1,0 +1,9 @@
+{
+    "list":
+    [
+        {"ContactName": "John","ContactNumber": "123", "EmailAddress": "john@smith.ca" },
+        {"ContactName": "Singh","ContactNumber": "456", "EmailAddress": "anand@singh.ca" },
+        {"ContactName": "Will","ContactNumber": "789", "EmailAddress": "will@byers.ca" }
+
+    ]
+}

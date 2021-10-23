@@ -1,0 +1,35 @@
+
+<%- include ../partials/header.ejs %>
+
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-11">
+            <h1><%= title %></h1>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Address</th>
+                    <th class="text-center col-3">Phone</th>
+                    <th class="col-3">Email</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < SortedList.length; count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= SortedList[count].Name %></td>
+                        
+                        <td class="text-center col-3"><%= SortedList[count].Phone %></td>
+                        <td class="text-center col-3"><%= SortedList[count].Email %></td>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+
+<%- include ../partials/footer.ejs %>

@@ -1,0 +1,81 @@
+<%- include ../partials/header.ejs %>
+
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-11">
+                <h1>
+                    <%= title %>
+                </h1>
+
+                <% if(typeof displayName=='string' && displayName) { %>
+                    <a href="/contact-list/add" class="btn btn-primary" role="button">
+                        <i class="fas fa-plus-circle"></i> Add a Contact</a><br>
+                    <% } %>
+                        <br>
+                        <a href="/contact-list/sort" class="btn btn-secondary" role="button">Sort by name</a><br><br>
+                        <table class="table table-bordered table-striped table-hover">
+                            <!-- Header Row-->
+                            <tr class="d-flex">
+                                <% if(typeof displayName=='string' && displayName) { %>
+                                    <th class="text-center col-2">Name</th>
+                                   
+                                    <th class="text-center col-3">Phone</th>
+                                    <th class="text-center col-3">Email</th>
+                                    <th class="text-center col-1"></th>
+                                    <th class="text-center col-1"></th>
+                                    <% } else { %>
+                                        <div class="alert alert-warning" role="alert">Please login or register as a user to edit, delete or update contacts.</div>
+                                        <th class="text-center col-2">Name</th>
+                                        
+                                        <th class="text-center col-3">Phone</th>
+                                        <th class="text-center col-3">Email</th>
+                                        <% } %>
+                            </tr>
+
+                            <!-- Repeatable Template Row -->
+
+                            <% for(let count=0; count < ContactList.length; count++) { %>
+                                <tr class="d-flex">
+                                    <% if(typeof displayName=='string' && displayName) { %>
+                                        <td class="text-center col-2">
+                                            <%= ContactList[count].Name %>
+                                        </td>
+                                        
+                                        <td class="text-center col-3">
+                                            <%= ContactList[count].Phone %>
+                                        </td>
+                                        <td class="text-center col-3">
+                                            <%= ContactList[count].Email %>
+                                        </td>
+                                        <td class="text-center col-1">
+                                            <a href="/contact-list/edit/<%= ContactList[count]._id %>"
+                                                class="btn btn-primary btn-sm">
+                                                <i class="fas fa-pencil-alt"></i> Edit</a>
+                                        </td>
+                                        <td class="text-center col-1">
+                                            <a href="/contact-list/delete/<%= ContactList[count]._id %>"
+                                                class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash-alt"></i> Delete</a>
+                                        </td>
+                                        <% } else { %>
+                                            <td class="text-center col-2">
+                                                <%= ContactList[count].Name %>
+                                            </td>
+                                            
+                                            <td class="text-center col-3">
+                                                <%= ContactList[count].Phone %>
+                                            </td>
+                                            <td class="text-center col-3">
+                                                <%= ContactList[count].Email %>
+                                            </td>
+                                            <% } %>
+                                </tr>
+                                <% } %>
+                        </table>
+            </div>
+        </div>
+    </main>
+
+    <%- include ../partials/footer.ejs %>

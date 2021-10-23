@@ -1,0 +1,44 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+  
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1></h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">ContactName</th>
+                    <th class="text-center col-2">ContactNumber</th>
+                    <th class="text-center col-1">EmailAddress</th>
+                    
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < ContactList.length; count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= ContactList[count].ContactName %></td>
+                        <td class="text-center col-2"><%= ContactList[count].ContactNumber %></td>
+                        <td class="text-center col-1"><%= ContactList[count].EmailAddress%></td>
+                        
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+  
+<%- include partials/bottom_nav.ejs %>  
+
+<%- include partials/footer.ejs %>
+  
+
+
+
+
+
