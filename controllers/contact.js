@@ -47,6 +47,8 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newContact = Contact({
         "Name": req.body.Name,
+        "Address.City": req.body.City,
+        "Address.Country": req.body.Country,
         "Phone": req.body.Phone,
         "Email": req.body.Email
     });
@@ -88,6 +90,8 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedContact = Contact({
         "_id": id,
         "Name": req.body.Name,
+        "Address.City": req.body.City,
+        "Address.Country": req.body.Country,
         "Phone": req.body.Phone,
         "Email": req.body.Email
     });

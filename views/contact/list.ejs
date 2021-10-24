@@ -20,7 +20,7 @@
                             <tr class="d-flex">
                                 <% if(typeof displayName=='string' && displayName) { %>
                                     <th class="text-center col-2">Name</th>
-                                   
+                                    <th class="text-center col-2">Address</th>
                                     <th class="text-center col-3">Phone</th>
                                     <th class="text-center col-3">Email</th>
                                     <th class="text-center col-1"></th>
@@ -28,7 +28,7 @@
                                     <% } else { %>
                                         <div class="alert alert-warning" role="alert">Please login or register as a user to edit, delete or update contacts.</div>
                                         <th class="text-center col-2">Name</th>
-                                        
+                                        <th class="text-center col-2">Address</th>
                                         <th class="text-center col-3">Phone</th>
                                         <th class="text-center col-3">Email</th>
                                         <% } %>
@@ -42,7 +42,12 @@
                                         <td class="text-center col-2">
                                             <%= ContactList[count].Name %>
                                         </td>
-                                        
+                                        <td class="text-center col-2">
+                                            <b>City:</b>
+                                            <%= ContactList[count].Address.City %><br>
+                                                <b>Country:</b>
+                                                <%= ContactList[count].Address.Country %><br>
+                                        </td>
                                         <td class="text-center col-3">
                                             <%= ContactList[count].Phone %>
                                         </td>
@@ -63,7 +68,12 @@
                                             <td class="text-center col-2">
                                                 <%= ContactList[count].Name %>
                                             </td>
-                                            
+                                            <td class="text-center col-2">
+                                                <b>City:</b>
+                                                <%= ContactList[count].Address.City %><br>
+                                                    <b>Country:</b>
+                                                    <%= ContactList[count].Address.Country %><br>
+                                            </td>
                                             <td class="text-center col-3">
                                                 <%= ContactList[count].Phone %>
                                             </td>

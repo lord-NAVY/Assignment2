@@ -1,4 +1,3 @@
-
 <%- include ../partials/header.ejs %>
 
 
@@ -21,7 +20,10 @@
                 <% for(let count = 0; count < SortedList.length; count++) { %>
                     <tr class="d-flex">
                         <td class="text-center col-2"><%= SortedList[count].Name %></td>
-                        
+                        <td class="text-center col-2">
+                            <b>City:</b> <%= SortedList[count].Address.City %><br>
+                            <b>Country:</b> <%= SortedList[count].Address.Country %><br>
+                        </td>
                         <td class="text-center col-3"><%= SortedList[count].Phone %></td>
                         <td class="text-center col-3"><%= SortedList[count].Email %></td>
                         </td>

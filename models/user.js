@@ -1,7 +1,3 @@
-//Ravneet Singh
-//College ID - 301175326
-
-// require modules for the User Model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
@@ -13,7 +9,7 @@ let User = mongoose.Schema
                 type: String,
                 default: '',
                 trim: true,
-                required: 'Username is Required'
+                required: 'username is required'
             },
             /*
             password: 
@@ -29,7 +25,7 @@ let User = mongoose.Schema
                 type: String,
                 default: '',
                 trim: true,
-                required: 'Email address is required'
+                required: 'email address is required'
             },
             displayName:
             {

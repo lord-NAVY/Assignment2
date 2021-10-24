@@ -5,7 +5,7 @@
  */
 
 var app = require('./config/app');
-var debug = require('debug')('personalportfolio:server');
+var debug = require('debug')('assignment02:server');
 var http = require('http');
 
 /**
